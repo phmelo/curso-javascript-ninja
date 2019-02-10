@@ -1,3 +1,7 @@
+-- Bonus
+Para baixar todos os branches, é só usar o comando git pull
+
+
 -- Para clonar o repositório, criando uma pasta com o repositório use o comando.
 λ git clone https://github.com/phmelo/curso-javascript-ninja.git
 
