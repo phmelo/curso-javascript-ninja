@@ -1,0 +1,126 @@
+-- Para clonar o repositório, criando uma pasta com o repositório use o comando.
+λ git clone https://github.com/phmelo/curso-javascript-ninja.git
+
+
+-- Adiciona o repositório upstream (Repositório original)
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (master -> origin)
+λ git remote add upstream https://github.com/da2k/curso-javascript-ninja.git
+
+
+-- Exibe os repositórios conectados onde o "Origin" é o meu repositório, e o upstream é o repositório original.
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (master -> origin)
+λ git remote -v
+origin  https://github.com/phmelo/curso-javascript-ninja.git (fetch)
+origin  https://github.com/phmelo/curso-javascript-ninja.git (push)
+upstream        https://github.com/da2k/curso-javascript-ninja.git (fetch)
+upstream        https://github.com/da2k/curso-javascript-ninja.git (push)
+
+
+-- Faz download do repositório externo ou principal para a maquina.
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (master -> origin)
+λ git fetch upstream
+remote: Enumerating objects: 2, done.
+remote: Counting objects: 100% (2/2), done.
+remote: Total 12 (delta 2), reused 2 (delta 2), pack-reused 10
+Unpacking objects: 100% (12/12), done.
+From https://github.com/da2k/curso-javascript-ninja
+ * [new branch]      master     -> upstream/master
+
+
+-- Faz um merge do repositório externo (principal ou original) com o repositório 
+    que foi criado depois do fork (Meu repositório ou local)
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (master -> origin)
+λ git merge upstream/master
+Updating b71131e..9b569b7
+Fast-forward
+ .github/ISSUE_TEMPLATE.md        |  2 +-
+ .github/PULL_REQUEST_TEMPLATE.md | 11 +++++++++++
+ 2 files changed, 12 insertions(+), 1 deletion(-)
+ create mode 100644 .github/PULL_REQUEST_TEMPLATE.md
+
+
+-- Cria uma nova Branch 
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (master -> origin)
+λ git checkout -b PH
+Switched to a new branch 'PH'
+
+
+-- Serve para listar as branches (a com * é a selecionada)
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (PH -> origin)
+λ git branch
+* PH
+  master
+
+
+
+-- Serve para mudar de branch
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (PH -> origin)
+λ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+
+
+-- Serve para mudar de branch
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (master -> origin)
+λ git checkout PH
+Switched to branch 'PH'
+
+
+
+-- Verifica se há modificação (Um arquivo alterado)
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (PH -> origin)
+λ git status
+On branch PH
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+-- Adiciona alterações a branch selecionada(branch PH)
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (PH -> origin)
+λ git add .
+
+
+-- Verifica se há alguma modificação (Mostra que foi adicionado)
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (PH -> origin)
+λ git status
+On branch PH
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+
+
+
+-- commit das alterações feitas localmente
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (PH -> origin)
+λ git commit -m "Teste do uso do git"
+[PH fd23941] Teste do uso do git
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+
+
+-- Comando para publicar no github
+S:\Estudo\Projetos\JSNinja\curso-javascript-ninja\challenge-02 (PH -> origin)
+λ git push origin PH
+Enumerating objects: 21, done.
+Counting objects: 100% (21/21), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (16/16), 3.49 KiB | 1.75 MiB/s, done.
+Total 16 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'PH' on GitHub by visiting:
+remote:      https://github.com/phmelo/curso-javascript-ninja/pull/new/PH
+remote:
+To https://github.com/phmelo/curso-javascript-ninja.git
+ * [new branch]      PH -> PH
+
+
